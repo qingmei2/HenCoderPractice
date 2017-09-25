@@ -1,3 +1,6 @@
 # HenCoderPractice
 
-跟着扔物线大大学习自定义View~
+本文编译环境：
+
+AndroidStudio3.0
+
