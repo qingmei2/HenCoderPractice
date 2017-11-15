@@ -72,7 +72,6 @@ class Practice12PathEffectView : View {
         paint.pathEffect = sumPathEffect
         canvas.drawPath(path, paint)
         canvas.restore()
-
         canvas.save()
         canvas.translate(500f, 400f)
 
