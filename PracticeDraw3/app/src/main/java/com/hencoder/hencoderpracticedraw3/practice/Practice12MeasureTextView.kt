@@ -14,11 +14,11 @@ class Practice12MeasureTextView : View {
     internal var text2 = "4.5"
     internal var text3 = "公斤"
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     init {
         paint1.textSize = 60f
@@ -31,8 +31,11 @@ class Practice12MeasureTextView : View {
 
         // 使用 Paint.measureText 测量出文字宽度，让文字可以相邻绘制
 
+        val length1 = paint1.measureText(text1, 0, text1.length)
+        val length2 = paint2.measureText(text2, 0, text2.length)
+
         canvas.drawText(text1, 50f, 200f, paint1)
-        canvas.drawText(text2, (50 + 100).toFloat(), 200f, paint2)
-        canvas.drawText(text3, (50 + 200).toFloat(), 200f, paint1)
+        canvas.drawText(text2, 50f + length1, 200f, paint2)
+        canvas.drawText(text3, 50f + length1 + length2, 200f, paint1)
     }
 }

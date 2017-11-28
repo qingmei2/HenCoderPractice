@@ -20,11 +20,11 @@ class Practice05SetFakeBoldTextView : View {
         paint.textSize = 60f
 
         // 使用 Paint.setFakeBoldText() 来加粗文字
+        paint.isFakeBoldText = true
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
         canvas.drawText(text, 50f, 100f, paint)
     }
 }

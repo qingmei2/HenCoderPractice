@@ -20,6 +20,7 @@ class Practice09SetTextScaleXView : View {
         paint.textSize = 60f
 
         // 使用 Paint.setTextScaleX() 来改变文字宽度
+        paint.textScaleX = 3f
     }
 
     override fun onDraw(canvas: Canvas) {

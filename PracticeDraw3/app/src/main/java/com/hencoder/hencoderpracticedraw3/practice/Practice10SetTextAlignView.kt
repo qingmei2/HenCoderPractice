@@ -10,11 +10,11 @@ class Practice10SetTextAlignView : View {
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     internal var text = "Hello HenCoder"
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     init {
         paint.textSize = 60f
@@ -28,12 +28,15 @@ class Practice10SetTextAlignView : View {
         // 使用 Paint.setTextAlign() 来调整文字对齐方式
 
         // 第一处：使用 Paint.Align.LEFT
+        paint.textAlign = Paint.Align.LEFT
         canvas.drawText(text, (width / 2).toFloat(), 100f, paint)
 
         // 第二处：使用 Paint.Align.CENTER
+        paint.textAlign = Paint.Align.CENTER
         canvas.drawText(text, (width / 2).toFloat(), 200f, paint)
 
         // 第三处：使用 Paint.Align.RIGHT
+        paint.textAlign = Paint.Align.RIGHT
         canvas.drawText(text, (width / 2).toFloat(), 300f, paint)
     }
 }

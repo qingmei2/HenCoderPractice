@@ -26,5 +26,6 @@ class Practice01DrawTextView : View {
         super.onDraw(canvas)
         // 使用 drawText() 来绘制文字
         // 文字坐标： (50, 100)
+        canvas.drawText("Hello HenCoder", 50f, 100f, paint)
     }
 }

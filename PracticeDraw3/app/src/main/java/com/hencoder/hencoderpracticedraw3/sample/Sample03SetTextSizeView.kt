@@ -1,4 +1,4 @@
-package com.hencoder.hencoderpracticedraw3.practice
+package com.hencoder.hencoderpracticedraw3.sample
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,7 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class Practice08SetTextSkewXView : View {
+class Sample03SetTextSizeView : View {
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     internal var text = "Hello HenCoder"
 
@@ -16,16 +16,24 @@ class Practice08SetTextSkewXView : View {
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
 
-    init {
-        paint.textSize = 60f
-
-        // 使用 Paint.setTextSkewX() 来让文字倾斜
-        paint.textSkewX = -0.5f
-    }
-
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        canvas.drawText(text, 50f, 100f, paint)
+        var y = 100
+
+        paint.textSize = 16f
+        canvas.drawText(text, 50f, y.toFloat(), paint)
+
+        y += 30
+        paint.textSize = 24f
+        canvas.drawText(text, 50f, y.toFloat(), paint)
+
+        y += 55
+        paint.textSize = 48f
+        canvas.drawText(text, 50f, y.toFloat(), paint)
+
+        y += 80
+        paint.textSize = 72f
+        canvas.drawText(text, 50f, y.toFloat(), paint)
     }
 }

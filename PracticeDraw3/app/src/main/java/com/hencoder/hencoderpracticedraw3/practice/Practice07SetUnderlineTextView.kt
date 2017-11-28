@@ -20,6 +20,7 @@ class Practice07SetUnderlineTextView : View {
         paint.textSize = 60f
 
         // 使用 Paint.setUnderlineText() 来设置下划线
+        paint.isUnderlineText = true
     }
 
     override fun onDraw(canvas: Canvas) {

@@ -20,6 +20,7 @@ class Practice06SetStrikeThruTextView : View {
         paint.textSize = 60f
 
         // 使用 Paint.setStrikeThruText() 来设置删除线
+        paint.isStrikeThruText = true
     }
 
     override fun onDraw(canvas: Canvas) {

@@ -10,11 +10,11 @@ class Practice11GetFontSpacingView : View {
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     internal var text = "Hello HenCoder"
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     init {
         paint.textSize = 60f
@@ -28,8 +28,8 @@ class Practice11GetFontSpacingView : View {
 
         canvas.drawText(text, 50f, 100f, paint)
 
-        canvas.drawText(text, 50f, 100 + spacing, paint)
+        canvas.drawText(text, 50f, 100 + paint.fontSpacing, paint)
 
-        canvas.drawText(text, 50f, 100 + spacing * 2, paint)
+        canvas.drawText(text, 50f, 100 + paint.fontSpacing * 2, paint)
     }
 }

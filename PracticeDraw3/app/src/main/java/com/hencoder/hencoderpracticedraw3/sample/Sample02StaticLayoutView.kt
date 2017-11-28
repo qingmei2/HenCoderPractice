@@ -1,4 +1,4 @@
-package com.hencoder.hencoderpracticedraw3.practice
+package com.hencoder.hencoderpracticedraw3.sample
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,9 +9,10 @@ import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
 
-class Practice02StaticLayoutView : View {
+class Sample02StaticLayoutView : View {
     internal var textPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
     internal var text = "Hello\nHenCoder"
+    internal var staticLayout: StaticLayout
 
     constructor(context: Context) : super(context) {}
 
@@ -21,15 +22,16 @@ class Practice02StaticLayoutView : View {
 
     init {
         textPaint.textSize = 60f
+        // 这两行的位置不能换哟
+        staticLayout = StaticLayout(text, textPaint, 600, Layout.Alignment.ALIGN_NORMAL, 1f, 0f, true)
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        // 使用 StaticLayout 代替 Canvas.drawText() 来绘制文字，
-        // 以绘制出带有换行的文字
-        StaticLayout(text, textPaint, 600, Layout.Alignment.ALIGN_NORMAL, 1f, 0f, true).also {
-            it.draw(canvas)
-        }
+        canvas.save()
+        canvas.translate(50f, 40f)
+        staticLayout.draw(canvas)
+        canvas.restore()
     }
 }
