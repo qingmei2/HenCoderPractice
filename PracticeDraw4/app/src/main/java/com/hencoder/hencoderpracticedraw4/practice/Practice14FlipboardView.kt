@@ -61,8 +61,18 @@ class Practice14FlipboardView : View {
         val x = centerX - bitmapWidth / 2
         val y = centerY - bitmapHeight / 2
 
+        // 绘制上半部分
         canvas.save()
+        canvas.clipRect(0, 0, width, centerY)
+        canvas.drawBitmap(bitmap, x.toFloat(), y.toFloat(), paint)
+        canvas.restore()
 
+        // 绘制下半部分
+        if (degree < 90f) {
+            canvas.clipRect(0,centerY,width,height)
+        } else {
+            canvas.clipRect(0,0,width,centerY)
+        }
         camera.save()
         camera.rotateX(degree.toFloat())
         canvas.translate(centerX.toFloat(), centerY.toFloat())

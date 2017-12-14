@@ -25,11 +25,12 @@ class Practice13CameraRotateHittingFaceView : View {
     internal var degree: Int = 0
     internal var animator = ObjectAnimator.ofInt(this, "degree", 0, 360)
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int)
+            : super(context, attrs, defStyleAttr)
 
     init {
         bitmap = BitmapFactory.decodeResource(resources, R.drawable.maps)
@@ -40,6 +41,10 @@ class Practice13CameraRotateHittingFaceView : View {
         animator.duration = 5000
         animator.interpolator = LinearInterpolator()
         animator.repeatCount = ValueAnimator.INFINITE
+
+        val displayMetrics = resources.displayMetrics
+        val fl = -displayMetrics.density * 6
+        camera.setLocation(0f, 0f, fl)
     }
 
     override fun onAttachedToWindow() {
