@@ -68,6 +68,7 @@ class Practice14FlipboardView : View {
         canvas.restore()
 
         // 绘制下半部分
+        canvas.save()
         if (degree < 90f) {
             canvas.clipRect(0,centerY,width,height)
         } else {
