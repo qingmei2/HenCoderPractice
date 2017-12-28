@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        pager = findViewById(R.id.pager)
         pager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
 
             override fun getItem(position: Int): Fragment {
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        tabLayout = findViewById(R.id.tabLayout)
         tabLayout.setupWithViewPager(pager)
     }
 

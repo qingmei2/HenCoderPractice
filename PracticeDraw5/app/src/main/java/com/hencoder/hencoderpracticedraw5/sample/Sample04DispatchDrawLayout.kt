@@ -22,7 +22,7 @@ class Sample04DispatchDrawLayout : LinearLayout {
         pattern.draw(canvas)
     }
 
-    private inner class Pattern {
+    inner class Pattern {
 
         internal var patternPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         internal var spots: Array<Spot?>

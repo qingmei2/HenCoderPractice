@@ -11,20 +11,26 @@ class Practice03OnDrawLayout : LinearLayout {
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     internal var pattern = Pattern()
 
-    constructor(context: Context) : super(context) {}
+    constructor(context: Context) : super(context)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {}
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     init {
         // 在这里插入 setWillNotDraw(false) 以启用完整的绘制流程
+//        setWillNotDraw(false)
+    }
+
+    override fun dispatchDraw(canvas: Canvas) {
+        super.dispatchDraw(canvas)
+        //或者在这里调用
+        pattern.draw(canvas)
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-        pattern.draw(canvas)
+        //        pattern.draw(canvas)
     }
 
     inner class Pattern {
